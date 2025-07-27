@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Raw Material Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Available Raw Materials</h1>
+  <div id="products"></div>
+  <script>
+    fetch('/products')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('products');
+        data.forEach(p => {
+          container.innerHTML += `<div>
+            <h3>${p.name}</h3>
+            <p>${p.description}</p>
+            <p>₹${p.price} per kg</p>
+            <button onclick="checkout(${p.price * 100})">Buy Now</button>
+          </div>`;
+        });
+      });
+
+    function checkout(amount) {
+      fetch('/checkout', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ amount })
+      })
+      .then(res => res.json())
+      .then(data => {
+        window.location.href = `https://checkout.stripe.com/pay/${data.id}`;
+      });
+    }
+  </script>
+</body>
+</html>
