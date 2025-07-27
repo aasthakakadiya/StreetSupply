@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreetSupply - Seller Portal</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <!-- 🔷 Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="logo">StreetSupply</div>
+    <input type="text" class="search-bar" placeholder="Search vendors/materials...">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Vendors</a>
+      <a href="#">Orders</a>
+      <a href="#">Notifications</a>
+      <a href="C:\xampp\htdocs\swathahhar\profile.php">Profile</a>
+    </nav>
+  </header>
+
+  <div class="main-wrapper">
+    <!-- 🔷 Left Sidebar (Dynamic Seller Info) -->
+    <aside class="left-sidebar">
+      <div id="seller-info">
+        <img src="seller.jpg" alt="Seller Profile" class="profile-pic">
+        <h2 id="seller-name">[Seller Name]</h2>
+        <p><strong>Food Type:</strong> <span id="food-type">[Type]</span></p>
+        <p><strong>Location:</strong> <span id="location">[Location]</span></p>
+
+        <h3>Daily Needs:</h3>
+        <ul id="daily-needs-list">
+          <!-- JS will populate this -->
+        </ul>
+
+        <h3>Order History</h3>
+        <ul id="order-history">
+          <!-- JS will populate this -->
+        </ul>
+      </div>
+
+      <!-- 🔄 Update Profile Section -->
+      <h3>Update Profile</h3>
+      <form id="update-profile-form">
+        <input type="text" id="update-name" placeholder="Your Name" required>
+        <input type="text" id="update-food" placeholder="Food Type (e.g., Dosa)" required>
+        <input type="text" id="update-location" placeholder="Location" required>
+        <textarea id="update-needs" placeholder="Comma separated Daily Needs"></textarea>
+        <button type="submit">Update Profile</button>
+      </form>
+    </aside>
+
+    <!-- 🔷 Center Section (Vendor Feed like LinkedIn posts) -->
+    <main class="marketplace">
+      <h2>Vendor Marketplace Feed</h2>
+      <div id="vendor-feed">
+        <!-- JS will populate vendor cards here -->
+      </div>
+
+      <!-- Seller Post Section -->
+      <div class="post-update">
+        <textarea id="seller-post" placeholder="Post about your needs or feedback..."></textarea>
+        <button onclick="submitSellerPost()">Post</button>
+      </div>
+
+      <!-- Posted Feed (Like LinkedIn Feed) -->
+      <div id="seller-feed">
+        <!-- JS will populate seller's own posts -->
+      </div>
+    </main>
+
+    <!-- 🔷 Right Sidebar (Static Suggestions) -->
+    <aside class="right-sidebar">
+      <h3>Top Rated Vendors</h3>
+      <ul>
+        <li>Shree Traders - ⭐⭐⭐⭐☆</li>
+        <li>DailyFresh Deals - ⭐⭐⭐⭐⭐</li>
+      </ul>
+
+      <h3>Cheapest Ingredients Nearby</h3>
+      <ul>
+        <li>Surat Supply Hub - ₹36/kg Rice</li>
+        <li>Gujarat Gases - ₹950/Cylinder</li>
+      </ul>
+
+      <h3>New Vendors</h3>
+      <ul>
+        <li>Anna Traders - Dosa Supplies</li>
+        <li>Shruti Spices - Masalas</li>
+      </ul>
+    </aside>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>

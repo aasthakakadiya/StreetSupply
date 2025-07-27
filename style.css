@@ -1,0 +1,25 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+#products div {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+// =============================
+// FILE: public/success.html
+// =============================
+<!DOCTYPE html>
+<html>
+<head><title>Payment Successful</title></head>
+<body>
+  <h2>✅ Payment Successful!</h2>
+  <a href="/index.html">Back to store</a>
+</body>
+</html>
